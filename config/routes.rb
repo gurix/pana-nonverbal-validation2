@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   get '/export', to: 'export#show'
+
+  mount Ahoy::Engine => "/ahoy", as: :my_ahoy
 end

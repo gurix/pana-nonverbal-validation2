@@ -27,7 +27,6 @@ feature 'Subject' do
     subj = Subject.first
     expect(subj.visit).to be_valid
     expect(subj.user_agent).to have_content 'Mozilla/5.0'
-    expect(subj.accept_language.first.name).to eq 'German'
     expect(subj.tic).to eq 'LookingForFreedom'
   end
 end

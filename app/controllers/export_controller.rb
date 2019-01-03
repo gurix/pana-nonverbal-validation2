@@ -6,7 +6,9 @@ class ExportController < ApplicationController
   before_action :http_basic_auth
 
   def show
+    binding.pry
     csv_header
+
     Subject.find_each do |subject|
       row = subject_columns.map { |column| subject[column] if subject } +
             pana_validation_questionary_columns.map { |column| subject.pana_validation_questionary[column] if subject.pana_validation_questionary } +
@@ -18,7 +20,7 @@ class ExportController < ApplicationController
   end
 
   def visit_columns
-    Visit.columns.map(&:name) - %w[id user_id]
+    Ahoy::Visit.columns.map(&:name) - %w[id user_id]
   end
 
   def pana_validation_questionary_columns

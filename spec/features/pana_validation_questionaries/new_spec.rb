@@ -119,7 +119,6 @@ feature 'PanaValidationQuestionary' do
     PanaValidationQuestionaryStructure::MAPPING.each_key do | group |
 
       subject = create :subject, group: group, tic: 'LookingForFreedom'
-
       standard_questionary(subject)
 
       url = "https://mingle.respondi.com/s/#{PanaValidationQuestionariesController::RESPONDI_RETURN_CODES[group.to_sym]}/ospe.php3?c_0002=1&return_tic=#{subject.tic}"

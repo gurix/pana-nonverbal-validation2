@@ -1,5 +1,5 @@
 class Subject < ApplicationRecord
-  visitable nil, optional: true # set optional https://github.com/ankane/ahoy/issues/276#issuecomment-341974325
+  visitable :visit, optional: true # set optional https://github.com/ankane/ahoy/issues/276#issuecomment-341974325
 
   has_one :pana_validation_questionary
 
