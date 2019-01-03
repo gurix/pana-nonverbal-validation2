@@ -1,0 +1,70 @@
+de:
+  pana_validation_questionaries:
+    pages:
+      page1:
+        title: Wie fühlten Sie sich in den letzten Tagen?
+        description: Bewegen Sie jeden Balken in Richtung des Gesichtsausdrucks, der Sie spontan anspricht.
+
+      page2:
+        title: Die folgenden Aussagen betreffen Ihr Wohlbefinden in den letzten Tagen.
+        description: Markieren Sie bei jeder Aussage die Rubrik, die Ihrer Meinung nach am besten beschreibt, wie Sie sich in den letzten Tagen gefühlt haben.
+        scale:
+          5: Die ganze Zeit
+          4: Meistens
+          3: Etwas mehr als die Hälfte der Zeit
+          2: Etwas weniger als die Hälfte der Zeit
+          1: Ab und zu
+          0: Zu keinem Zeitpunkt
+
+      page3:
+        title: Persönlichkeit
+        description_html: <p>Im Folgenden finden Sie eine Anzahl von Eigenschaftswörtern, die in Form von Gegensatzpaaren angeordnet sind. Bitte versuchen Sie mit Hilfe dieser Liste zu beschreiben, <strong>wie Sie selber im Allgemeinen sind.</strong></p><p>Bitte versuchen Sie so spontan und offen als möglich zu antworten - auch wenn manche Eigenschaftswörter vielleicht etwas "direkt" formuliert sind und gewisse Gegensätze für Sie nicht ganz stimmen.</p>
+        scale:
+          6: sehr
+          5: ziemlich
+          4: eher
+          3: eher
+          2: ziemlich
+          1: sehr
+
+      page4:
+        title: Wie fühlten Sie sich in den letzten Tagen?
+        description: Kreuzen Sie auf jeder Zeile an, was Ihren Gefühlen am ehesten entspricht.
+        scale:
+          1: sehr
+          2: ziemlich
+          3: etwas
+          4: unentschieden
+          5: etwas
+          6: ziemlich
+          7: sehr
+
+      page5:
+        title: Es folgen fünf Aussagen, denen Sie zustimmen bzw. die Sie ablehnen können.
+        description: benutzen Sie die folgende Skala von «trifft überhaupt nicht zu» bis «trifft vollständig zu», um Ihre Zustimmung bzw. Ablehnung zu jeder Aussage zum Ausdruck zu bringen.
+        scale:
+          1: trifft überhaupt nicht zu
+          2: trifft nicht zu
+          3: trifft eher nicht zu
+          4: teils / teils
+          5: trifft eher zu
+          6: trifft zu
+          7: trifft vollständig zu
+
+      page6:
+        title: Wie fühlten Sie sich in den letzten Tagen?
+        description: Klicken Sie auf jeder Zeile das Bild an, was Ihren Gefühlen am ehesten entspricht.
+
+      page7:
+        title: Dieser Fragebogen enthält eine Reihe von Wörtern, die unterschiedliche Gefühle und Empfindungen beschreiben.
+        description: Lesen Sie jedes Wort und tragen Sie dann in die Skala neben jedem Wort die Intensität ein. Sie haben die Möglichkeit, zwischen fünf Abstufungen zu wählen. Geben Sie bitte an, wie Sie sich in den letzten Tagen gefühlt haben.
+        scale:
+          1: gar nicht
+          2: ein bisschen
+          3: einigermassen
+          4: erheblich
+          5: äusserst
+
+      page8:
+        title: Herzlichen Dank für Ihre Teilnahme!
+        description: Sie haben die Umfrage abgeschlossen können Ihr Browserfenster nun schliessen.

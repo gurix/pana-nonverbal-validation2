@@ -1,0 +1,92 @@
+---
+title: "PANAVA PreAnalysis"
+author: "Markus Graf"
+date: "29 3 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source('prepare_data.R')
+```
+
+## Data description
+
+```{r}
+nrow(raw_data)
+nrow(completed)
+```
+
+### Origin
+
+```{r}
+barplot(table(droplevels(completed$residence)), main="Country by Questioning")
+barplot(table(droplevels(completed$country)), main="Country by IP-Address")
+table(droplevels(completed$region))
+```
+
+### Device
+```{r}
+pie(table(droplevels(completed$device_type)), main="Device Type")
+pie(table(droplevels(completed$browser)), main="Browser")
+pie(table(droplevels(completed$os)), main="Operating System")
+```
+
+```{r}
+plot(completed$screen_width, completed$screen_height, main="Screen Resolution")
+```
+
+### Duration
+```{r}
+
+boxplot(completed$duration, main="Speed in Minutes", ylim=c(0,30))
+```
+
+### Age and Gender
+```{r}
+hist(completed$age, main="Age", xlab = "Age")
+pie(table(droplevels(completed$gender)), main="Gender")
+```
+
+### Groups
+```{r}
+barplot(table(droplevels(completed$group)), main="Groups")
+```
+
+## Emojis
+```{r}
+comparisons <- c("PA3_lo__PA1_hi","NA2_lo__NA1_hi", "PA4_hi__PA4_lo3","VA1_lo__NA3_lo", "VA1_hi__VA2_lo","PA1_lo__PA1_hi", "NA3_lo__NA2_hi", "PA3_hi__PA3_lo",  "NA1_hi__NA1_lo", "VA2_hi__VA2_lo", "VA1_hi__VA1_lo", "PA1_hi__PA1_lo", "PA2_lo__PA2_hi1", "NA2_lo__NA2_hi", "VA2_lo__VA2_hi", "PA3_lo__PA3_hi", "NA3_lo__NA3_hi", "NA4_hi__NA4_lo", "PA2_lo__PA2_hi5")
+summary(completed[,comparisons])
+```
+
+## WHO
+```{r}
+columns <- names(completed[grep("who",names(completed))])
+summary(completed[, columns])
+boxplot(completed[, columns])
+```
+## MRS
+```{r}
+columns <- names(completed[grep("mrs",names(completed))])
+summary(completed[, columns])
+boxplot(completed[, columns])
+```
+## PNV
+```{r}
+columns <- names(completed[grep("pnv",names(completed))])
+summary(completed[, columns])
+boxplot(completed[, columns])
+```
+
+## SWL
+```{r}
+columns <- names(completed[grep("swl",names(completed))])
+summary(completed[, columns])
+boxplot(completed[, columns])
+```
+
+## PAN
+```{r}
+columns <- names(completed[grep("pan",names(completed))])
+summary(completed[, columns])
+boxplot(completed[, columns])
+```

@@ -1,0 +1,31 @@
+= headline_with_flash
+p = t('.description')
+ruby:
+  questions = t('activerecord.attributes.pana_validation_questionary').select { |word| word.to_s =~ /^pnv/ }
+
+- questions.each_with_index do |item, index|
+  - if index % 10 == 0
+    .row aria-hidden="true"
+      .col-lg-2.d-none.d-lg-block
+      .col-lg-8.d-none.d-lg-block
+        .row
+          - t('.scale').each do |value ,text|
+            .col-lg.radio_button
+              strong = text
+  fieldset
+    .row
+      .col-lg-2
+        .bipolar-left
+          = item.last.split("|").first
+        - f.object.errors.full_messages_for(item.first).map do |error|
+          .help-block = error
+      .col-lg-8
+        .row
+          - t('.scale').each do |value ,text|
+            .radio_button.col-lg
+              .text= f.radio_button item.first, value
+              label for="pana_validation_questionary_#{item.first}_#{value}" = text
+      .col-lg-2
+        .bipolar-right
+          = item.last.split("|").last
+  hr

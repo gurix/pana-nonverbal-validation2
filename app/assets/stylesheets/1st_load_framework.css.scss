@@ -1,0 +1,21 @@
+@import "variables";
+@import "bootstrap";
+
+// make all images responsive by default
+img {
+  @extend .img-fluid;
+  margin: 0 auto;
+}
+
+// style the submit button by default
+input[type=submit] {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-block;
+}
+
+main {
+  @extend .container;
+  margin-top: 30px; // accommodate the navbar
+  margin-bottom: 20px;
+}

@@ -1,0 +1,31 @@
+de:
+  subjects:
+    new:
+      title: Demographische Angaben
+    form:
+      description: "Für die statistischen Analysen benötigen wir folgende Angaben von Ihnen:"
+      genders:
+        f: Weiblich
+        m: Männlich
+        n: Anderes
+      educations:
+        0: Kein Abschluss
+        1: Hauptschul-/Volksschulabschlus
+        2: Obligatorische Schule (Primar-/Real-/Sekundar-/ Bezirksschule)
+        3: Berufslehre, Berufsschule, Berufsmittelschule
+        4: Maturität / Abitur
+        5: Fachhochschule
+        6: Universität, Hochschule
+      residences:
+        ch: Schweiz
+        de: Deutschland
+        at: Österreich
+        others: Anderes
+
+  simple_form:
+    labels:
+      subject:
+        age: Alter
+        gender: Geschlecht
+        education: Ihr höchster Bildungsabschluss
+        residence: Wohnort

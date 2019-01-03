@@ -1,0 +1,16 @@
+- if PanaValidationQuestionaryStructure.valid_group? @group
+  p Liebe/r Befragungsteilnehmer/in
+  p Wir entwickeln eine neue Skala zur Erfassung positiver und negativer Aktivierung mittels Emojis. Positive und negative Aktivierung umfasst unterschiedliche Emotionen wie Begeisterung, Nervosität, Stress, Langeweile oder voller Energie sein.
+  p Mit dieser Befragung testen wir die neue Skala im Vergleich zu anderen Skalen. <strong>Aus diesem Grund werden viele Fragen ähnlich tönen.</strong>
+  p Für diese Befragung benötigen Sie etwa <strong>10-15 Minuten</strong>. Antworten Sie spontan und ohne gross nachzudenken!
+  p Wir danken Ihnen herzlich für die Teilnahme!
+  p
+    | Marc Schreiber, IAP Institut für Angewandte Psychologie der ZHAW (#{mail_to 'scri@zhaw.ch'})
+    br
+    | Gregor Jenny, Universität Zürich (#{mail_to 'gregor.jenny@uzh.ch'})
+  p Die Emojis wurden von Maren Lebender erarbeitet, Studierende an der Zürcher Hochschule der Künste (ZHdK).
+
+
+  p.text-center = link_to 'Umfrage starten', new_subject_path(group: @group, tic: params[:tic]) , class: 'btn btn-lg btn-primary font-weight-bold'
+- else
+  .alert.alert-danger Die Gruppe «#{@group}» ist nicht zulässig. Folgende Gruppen sind verfügbar: #{PanaValidationQuestionaryStructure::MAPPING.keys.join(', ')}

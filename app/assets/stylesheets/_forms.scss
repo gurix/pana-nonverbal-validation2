@@ -1,0 +1,72 @@
+@media (min-width: 992px) {
+  form {
+      .col-sm-3.control-label {
+      text-align: right;
+    }
+
+    .radio_button {
+      display: block;
+      min-width: 108px;
+      text-align: center !important;
+      label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+      }
+    }
+
+    .bipolar-left {
+      text-align: right;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  form {
+    .radio_button {
+      * {
+       display: inline;
+      }
+    }
+  }
+}
+
+form {
+  .fa.fa-asterisk {
+    font-size: 0.5rem;
+    vertical-align: super;
+  }
+
+  .col-sm-3.control-label {
+    font-weight: bold;
+  }
+
+  .radio input {
+    margin-right: 1rem;
+  }
+
+  .radio {
+    label {
+      display: block;
+    }
+  }
+
+  .help-block {
+    color: red;
+  }
+
+  fieldset {
+    legend {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .bipolar-left, .bipolar-right  {
+      font-weight: bold;
+    }
+  }
+}
