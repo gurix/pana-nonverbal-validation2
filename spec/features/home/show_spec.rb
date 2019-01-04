@@ -1,6 +1,6 @@
 feature 'Home page' do
   scenario 'Visiting the home page assigns randomly a group' do
-    stub_const("PanaValidationQuestionaryStructure::MAPPING", abc: [:a,:b])
+    stub_const('PanaValidationQuestionaryStructure::MAPPING', abc: %i[a b])
 
     visit root_path
     expect(page).to have_content 'Entwicklung einer Emoji-Skala zur Erfassung positiver und negativer Aktivierung'
@@ -20,7 +20,7 @@ feature 'Home page' do
   end
 
   scenario 'Visit homepage including a tic code inlcuding this code to start the questionary' do
-    stub_const("PanaValidationQuestionaryStructure::MAPPING", abc: [:a,:b])
+    stub_const('PanaValidationQuestionaryStructure::MAPPING', abc: %i[a b])
 
     visit root_path(tic: 'LookingForFreedom')
     expect(page).to have_link 'Umfrage starten', href: new_subject_path(group: 'abc', tic: 'LookingForFreedom')

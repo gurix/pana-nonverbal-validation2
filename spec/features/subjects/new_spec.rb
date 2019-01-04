@@ -1,10 +1,10 @@
 feature 'Subject' do
   scenario 'Raises an error when no group is set' do
-    expect{ visit new_subject_path }.to raise_error 'missing group'
+    expect { visit new_subject_path }.to raise_error 'missing group'
   end
 
   scenario 'Raises an error when an unknown group is set' do
-    expect{ visit new_subject_path(group: 'haschisch') }.to raise_error 'haschisch is not available'
+    expect { visit new_subject_path(group: 'haschisch') }.to raise_error 'haschisch is not available'
   end
 
   scenario 'Create a new subject', js: true do
@@ -20,7 +20,7 @@ feature 'Subject' do
     choose 'Kein Abschluss'
     choose 'Schweiz'
 
-    expect { click_button 'Weiter' }.to change {Subject.count}.by(1)
+    expect { click_button 'Weiter' }.to change { Subject.count }.by(1)
 
     expect(page).to have_content 'Hinweis: Proband wurde erfolgreich erstellt.'
 

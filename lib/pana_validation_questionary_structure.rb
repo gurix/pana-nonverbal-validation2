@@ -66,6 +66,6 @@ class PanaValidationQuestionaryStructure
   end
 
   def self.valid_group?(group)
-    MAPPING.keys.include? group
+    MAPPING.key? group
   end
 end

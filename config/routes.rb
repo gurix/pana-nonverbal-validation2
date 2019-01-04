@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   get '/export', to: 'export#show'
 
-  mount Ahoy::Engine => "/ahoy", as: :my_ahoy
+  mount Ahoy::Engine => '/ahoy', as: :my_ahoy
 end
