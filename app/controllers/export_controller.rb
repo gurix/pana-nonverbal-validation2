@@ -6,7 +6,6 @@ class ExportController < ApplicationController
   before_action :http_basic_auth
 
   def show
-    binding.pry
     csv_header
 
     Subject.find_each do |subject|
