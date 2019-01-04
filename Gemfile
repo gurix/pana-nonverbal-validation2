@@ -15,6 +15,7 @@ gem 'high_voltage'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'mina' # Really fast deployer and server automation tool.
+gem 'mini_racer'
 gem 'mysql2', '~> 0.3.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.5'
@@ -23,7 +24,6 @@ gem 'responders' # A set of Rails responders
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form' # Forms made easy for Rails
 gem 'slim-rails'
-gem 'mini_racer'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'uglifier', '>= 1.3.0'
