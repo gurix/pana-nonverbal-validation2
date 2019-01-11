@@ -1,3 +1,5 @@
+exclude:
+  - lib/templates/slim/scaffold/_form.html.slim
 linters:
   LineLength:
     enabled: false
