@@ -1,4 +1,7 @@
 = simple_form_for [@subject, @pana_validation_questionary], url: subject_pana_validation_questionary_path(@subject) do |f|
-  = render "pana_validation_questionaries/pages/page#{@pana_validation_questionary.page}", f: f
+  - if @pana_validation_questionary.page < 6
+    = render "pana_validation_questionaries/pages/pana_vertical", f: f
+  - else
+    = render "pana_validation_questionaries/pages/page#{@pana_validation_questionary.page}", f: f
   = f.input :page, as: :hidden
   = f.submit value: t('shared.next') if @pana_validation_questionary.page < 8

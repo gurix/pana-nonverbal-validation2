@@ -1,0 +1,64 @@
+coffee:
+  $ ->
+    $('input[type="range"]').change ->
+      $('#pana_validation_questionary_' + this.id).val(this.value)
+
+
+scss:
+  .vertical-slider-container {
+
+    .vertical-slider {
+      height: 600px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      border: 1px solid green;
+
+      img {
+        width: 100px;
+      }
+
+      .vertical-slider-top {
+         border: 1px solid yellow;
+      }
+
+      .vertical-slider-middle {
+        display: flex;
+        align-items: center;
+        width: 20em;
+        height: 20em;
+        transform: rotate(-90deg);
+        border: 1px solid blue;
+
+        [type='range'] {
+          position: relative;
+          top: 0%;
+          width: 100%;
+        }
+      }
+
+      .vertical-slider-bottom {
+        border: 1px solid red;
+      }
+    }
+  }
+
+
+.pana_validation_questionary
+  .without-success-flash = headline_with_flash
+  p = t('.description')
+
+  - column_name = PanaValidationQuestionaryStructure.calculate_vertical_pana_columns[@pana_validation_questionary.page-1]
+  - pair = PanaValidationQuestionaryStructure::VERTICAL_MAPING[@pana_validation_questionary.page-1]
+  .vertical-slider-container
+    .vertical-slider
+      .vertical-slider-top
+        = image_tag "panava_nonverbal/#{pair.first}.png"
+      .vertical-slider-middle
+        = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
+        = f.input column_name, as: :hidden
+      .vertical-slider-bottom
+        = image_tag "panava_nonverbal/#{pair.last}.png"
