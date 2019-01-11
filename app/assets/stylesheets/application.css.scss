@@ -15,13 +15,36 @@
  */
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "variables";
+@import "bootstrap";
 
-// We don't use the sucess alert for sighted people here
-.pana_validation_questionaries #headline .alert-success {
-  @extend .sr-only;
-}
+body {
+  // make all images responsive by default
+  img {
+    @extend .img-fluid;
+    margin: 0 auto;
+  }
 
-.vcenter {
-  display: flex;
-  align-items: center;
+  // style the submit button by default
+  input[type=submit] {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-block;
+  }
+
+  // We don't use the sucess alert for sighted people here
+  .pana_validation_questionaries #headline .alert-success {
+    @extend .sr-only;
+  }
+
+  .vcenter {
+    display: flex;
+    align-items: center;
+  }
+
+  main {
+    @extend .container;
+    margin-top: 30px; // accommodate the navbar
+    margin-bottom: 20px;
+  }
 }
