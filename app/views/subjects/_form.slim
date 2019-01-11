@@ -2,8 +2,17 @@ p = t('.description')
 
 = simple_form_for @subject do |f|
   = f.input :age
-  = f.input :gender, as: :radio_buttons, collection: t('.genders'), label_method: :second, value_method: :first
-  = f.input :education, as: :radio_buttons, collection: t('.educations'), label_method: :second, value_method: :first
-  = f.input :residence, as: :radio_buttons, collection: t('.residences'), label_method: :second, value_method: :first
+  = f.input :gender, as: :radio_buttons, collection:   t('.genders'),
+                                         label_method: :second,
+                                         value_method: :first
+
+  = f.input :education, as: :radio_buttons, collection:   t('.educations'),
+                                            label_method: :second,
+                                            value_method: :first
+
+  = f.input :residence, as: :radio_buttons, collection:   t('.residences'),
+                                            label_method: :second,
+                                            value_method: :first
+
   = f.input :tic, as: :hidden
   = f.submit value: t('shared.next')
