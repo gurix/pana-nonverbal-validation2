@@ -3,7 +3,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.4.1'
 
 gem 'ahoy_matey' # Ahoy provides a solid foundation to track visits and events in Ruby, JavaScript, and native apps.
 gem 'bootstrap', '~> 4.0.0.alpha6'
