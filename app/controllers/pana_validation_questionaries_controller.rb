@@ -1,5 +1,5 @@
 class PanaValidationQuestionariesController < ApplicationController
-  RESPONDI_RETURN_CODES = { gj: 917_489, ms: 917_509, sb1: 917_528, sb2: 917_547 }.freeze
+  RESPONDI_RETURN_CODE = 111_111
 
   respond_to :html
 
@@ -30,7 +30,7 @@ class PanaValidationQuestionariesController < ApplicationController
   private
 
   def respondi_complete_url
-    "https://mingle.respondi.com/s/#{RESPONDI_RETURN_CODES[@subject.group.to_sym]}/ospe.php3?c_0002=1&return_tic=#{@subject.tic}"
+    "https://mingle.respondi.com/s/#{RESPONDI_RETURN_CODE}/ospe.php3?c_0002=1&return_tic=#{@subject.tic}"
   end
 
   def pana_validation_questionary_params

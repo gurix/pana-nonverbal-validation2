@@ -28,8 +28,4 @@ class PanaValidationQuestionaryStructure
   def self.eomji_column_name(pair)
     pair.join('__')
   end
-
-  def self.valid_group?(group)
-    MAPPING.key? group
-  end
 end

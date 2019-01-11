@@ -1,17 +1,9 @@
 feature 'Subject' do
-  scenario 'Raises an error when no group is set' do
-    expect { visit new_subject_path }.to raise_error 'missing group'
-  end
-
-  scenario 'Raises an error when an unknown group is set' do
-    expect { visit new_subject_path(group: 'haschisch') }.to raise_error 'haschisch is not available'
-  end
-
   scenario 'Create a new subject', js: true do
     visit root_path
     sleep 1
 
-    visit new_subject_path(group: 'gj', tic: 'LookingForFreedom')
+    visit new_subject_path(tic: 'LookingForFreedom')
 
     expect(page).to have_content 'Demographische Angaben'
 

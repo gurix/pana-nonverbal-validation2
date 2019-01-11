@@ -1,12 +1,9 @@
 class PanaValidationQuestionary < ApplicationRecord
   belongs_to :subject
 
-  # Validate presence for each emoji depending on the group
-  PanaValidationQuestionaryStructure::MAPPING.each_key do |group|
-    PanaValidationQuestionaryStructure::MAPPING[group].each do |pair|
-      column_name = PanaValidationQuestionaryStructure.eomji_column_name(pair)
-      validates(column_name, presence: true, if: proc { |q| q.subject.group == group })
-    end
+  # Validate presence for each pair of emojis
+  PanaValidationQuestionaryStructure.calculate_vertical_pana_columns.each do |column|
+    validates(column, presence: true)
   end
 
   # Validate presence for each item of the rest of the survey
