@@ -45,11 +45,11 @@ de:
         pnv8: ruhig | nervös
         pnv9: begeistert | gelangweilt
         pnv10: besorgt | sorgenfrei
-        swl1: In den meisten Bereichen entspricht mein Leben meinen Idealvorstellungen.
-        swl2: Meine Lebensbedingungen sind ausgezeichnet.
-        swl3: Ich bin mit meinem Leben zufrieden.
-        swl4: Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.
-        swl5: Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.
+        swls1: In den meisten Bereichen entspricht mein Leben meinen Idealvorstellungen.
+        swls2: Meine Lebensbedingungen sind ausgezeichnet.
+        swls3: Ich bin mit meinem Leben zufrieden.
+        swls4: Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.
+        swls5: Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.
         pan1: aktiv
         pan2: bekümmert
         pan3: interessiert

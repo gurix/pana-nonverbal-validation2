@@ -7,7 +7,7 @@ ruby:
   .col-lg-3.d-none.d-lg-block
   .col-lg-9.d-none.d-lg-block
     .row
-      - t('.scale').each do |text|
+      - t('.scale').each do |_index, text|
         .col-lg.radio_button.vcenter
           strong = text
 - questions.each do |item|

@@ -125,11 +125,11 @@ completed$pnv10r <- 8 - completed$pnv10
 #   5: trifft eher zu
 #   6: trifft zu
 #   7: trifft vollständig zu
-# swl1: In den meisten Bereichen entspricht mein Leben meinen Idealvorstellungen.
-# swl2: Meine Lebensbedingungen sind ausgezeichnet.
-# swl3: Ich bin mit meinem Leben zufrieden.
-# swl4: Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.
-# swl5: Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.
+# swls1: In den meisten Bereichen entspricht mein Leben meinen Idealvorstellungen.
+# swls2: Meine Lebensbedingungen sind ausgezeichnet.
+# swls3: Ich bin mit meinem Leben zufrieden.
+# swls4: Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.
+# swls5: Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.
 
 # pan:
 #   1: gar nicht
