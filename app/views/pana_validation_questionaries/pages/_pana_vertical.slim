@@ -7,8 +7,8 @@ scss:
   .vertical-slider-container {
 
     .vertical-slider {
-      height: 600px;
-
+      height: 50vh;
+      min-height: 370px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -17,11 +17,13 @@ scss:
       img {
         width: 100px;
       }
+      
       .vertical-slider-middle {
         display: flex;
         align-items: center;
-        width: 20em;
+        width: 20vh;
         height: 20em;
+        min-width: 160px;
         transform: rotate(-90deg);
 
         [type='range'] {

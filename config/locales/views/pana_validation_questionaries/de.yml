@@ -1,7 +1,7 @@
 de:
   pana_validation_questionaries:
     pages:
-      page1:
+      pana_vertical:
         title: Wie fühlten Sie sich in den letzten Tagen?
         description: Bewegen Sie jeden Balken in Richtung des Gesichtsausdrucks, der Sie spontan anspricht.
 
