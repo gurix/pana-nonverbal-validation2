@@ -17,7 +17,7 @@ scss:
       img {
         width: 100px;
       }
-      
+
       .vertical-slider-middle {
         display: flex;
         align-items: center;
@@ -35,13 +35,14 @@ scss:
     }
   }
 
+ruby:
+  column_name = PanaValidationQuestionaryStructure.calculate_vertical_pana_columns[@pana_validation_questionary.page - 1]
+  pair = PanaValidationQuestionaryStructure::VERTICAL_MAPING[@pana_validation_questionary.page - 1]
 
 .pana_validation_questionary
   .without-success-flash = headline_with_flash
   p = t('.description')
 
-  - column_name = PanaValidationQuestionaryStructure.calculate_vertical_pana_columns[@pana_validation_questionary.page-1]
-  - pair = PanaValidationQuestionaryStructure::VERTICAL_MAPING[@pana_validation_questionary.page-1]
   .vertical-slider-container
     .vertical-slider
       .vertical-slider-top

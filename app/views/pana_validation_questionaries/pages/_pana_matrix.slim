@@ -13,16 +13,19 @@ coffee:
       $(this).closest('.col').addClass('active');
       console.log($(this).closest('.col'))
 
+ruby:
+  mapping_index = @pana_validation_questionary.page % 8
+  attribute = "emoji_matrix_#{mapping_index + 1}"
+  matrix = PanaValidationQuestionaryStructure::MATRIX_MAPPING[mapping_index]
+
 = headline_with_flash
 p = t('.description')
-- mapping_index = @pana_validation_questionary.page % 8
-- attribute = "emoji_matrix_#{mapping_index+1}"
-- matrix = PanaValidationQuestionaryStructure::MATRIX_MAPPING[mapping_index]
-- matrix.each do | row |
+
+- matrix.each do |row|
   .row.pana_matrix
     - row.each_with_index do |item, index|
-      .col class="text-#{index == 0 ? 'right': 'left'} #{'active' if f.object[attribute] == item}"
+      .col class="text-#{index.zero? ? 'right' : 'left'} #{'active' if f.object[attribute] == item}"
         label
           = image_tag "panava_nonverbal/#{item}.png"
           br
-          .sr-only= f.radio_button attribute, item
+          .sr-only = f.radio_button attribute, item
