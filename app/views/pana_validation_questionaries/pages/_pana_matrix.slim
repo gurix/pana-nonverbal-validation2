@@ -26,6 +26,6 @@ p = t('.description')
     - row.each_with_index do |item, index|
       .col class="text-#{index.zero? ? 'right' : 'left'} #{'active' if f.object[attribute] == item}"
         label
-          = image_tag "panava_nonverbal/#{item}.png"
+          = image_tag "panava_nonverbal/#{item}.png", alt: item
           br
           .sr-only = f.radio_button attribute, item
