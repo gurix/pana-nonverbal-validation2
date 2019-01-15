@@ -1,7 +1,11 @@
-coffee:
-  $ ->
-    $('input[type="range"]').change ->
-      $('#pana_validation_questionary_' + this.id).val(this.value)
+javascript:
+  $(document).ready(function() {
+    var slider = $('input[type="range"]');
+
+    slider.on('click touchend', function(event) {
+      $('#pana_validation_questionary_' + this.id).val(this.value);
+    });
+  });
 
 scss:
   .vertical-slider-container {
