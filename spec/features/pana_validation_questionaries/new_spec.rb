@@ -1,6 +1,6 @@
 def range_select(name, value)
   selector = %(input[type=range][name=\\"#{name}\\"])
-  script = %-$("#{selector}").val(#{value}).trigger('change')-
+  script = %-$("#{selector}").val(#{value}).trigger('click')-
   page.execute_script(script)
 end
 
