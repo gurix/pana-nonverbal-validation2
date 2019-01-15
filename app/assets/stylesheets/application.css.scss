@@ -18,6 +18,12 @@
 @import "variables";
 @import "bootstrap";
 
+// We don't use the sucess alert for sighted people here
+.pana_validation_questionaries .alert-success {
+  @extend .sr-only;
+  border: 10px solid red;
+}
+
 body {
   // make all images responsive by default
   img {
@@ -30,11 +36,6 @@ body {
     @extend .btn;
     @extend .btn-primary;
     @extend .btn-block;
-  }
-
-  // We don't use the sucess alert for sighted people here
-  .pana_validation_questionaries #headline .alert-success {
-    @extend .sr-only;
   }
 
   .vcenter {
