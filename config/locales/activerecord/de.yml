@@ -15,26 +15,6 @@ de:
         who3: In den letzten Tagen habe ich mich energisch und aktiv gefühlt
         who4: In den letzten Tagen habe ich mich beim Aufwachen frisch und ausgeruht gefühlt
         who5: In den letzten Tagen war mein Alltag voller Dinge, die mich interessieren
-        mrs1: gesprächig | schweigsam
-        mrs2: reizbar | gutmütig
-        mrs3: gründlich | unsorgfältig
-        mrs4: verletzlich | robust
-        mrs5: künstlerisch | unkünstlerisch
-        mrs6: zurückhaltend | kontaktfreudig
-        mrs7: nachsichtig | barsch
-        mrs8: ungeordnet | geordnet
-        mrs9: selbstzufrieden | selbstmitleidig
-        mrs10: unkreativ | kreativ
-        mrs11: anschlussbedürftig | einzelgängerisch
-        mrs12: selbstsüchtig | selbstlos
-        mrs13: übergenau | ungenau
-        mrs14: überempfindlich | entspannt
-        mrs15: originell | konventionell
-        mrs16: zurückgezogen | gesellig
-        mrs17: friedfertig | streitsüchtig
-        mrs18: nachlässig | gewissenhaft
-        mrs19: gefühlsstabil | labil
-        mrs20: phantasielos | phantasievoll
         pnv1: zufrieden | unzufrieden
         pnv2: energiegeladen | energielos
         pnv3: gestresst | entspannt
@@ -50,23 +30,18 @@ de:
         swls3: Ich bin mit meinem Leben zufrieden.
         swls4: Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.
         swls5: Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.
-        pan1: aktiv
-        pan2: bekümmert
-        pan3: interessiert
-        pan4: freudig erregt
-        pan5: verärgert
-        pan6: stark
-        pan7: schuldig
-        pan8: erschrocken
-        pan9: feindselig
-        pan10: angeregt
-        pan11: stolz
-        pan12: gereizt
-        pan13: begeistert
-        pan14: beschämt
-        pan15: wach
-        pan16: nervös
-        pan17: entschlossen
-        pan18: aufmerksam
-        pan19: durcheinander
-        pan20: ängstlich
+
+    errors:
+      models:
+        pana_validation_questionary:
+          attributes:
+            VA2_hi__VA2_lo:
+              blank: Benutzen Sie den Balken.
+            PA3_hi__PA3_lo:
+              blank: Benutzen Sie den Balken.
+            NA3_hi__NA3_lo:
+              blank: Benutzen Sie den Balken.
+            PA2_hi1__PA2_lo:
+              blank: Benutzen Sie den Balken.
+            NA2_hi__NA2_lo:
+              blank: Benutzen Sie den Balken.
