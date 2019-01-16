@@ -8,6 +8,7 @@ gem 'ahoy_matey' # Ahoy provides a solid foundation to track visits and events i
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'browser' # Do some browser detection with Ruby. Includes ActionController integration.
 gem 'coffee-rails', '~> 4.2'
+gem 'dotenv-rails'
 gem 'exception_notification' # Provides a set of notifiers for sending notifications when errors occur in a Rack/Rails application.
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'high_voltage'

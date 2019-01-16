@@ -1,3 +1,4 @@
+require 'dotenv/load'
 require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
@@ -10,13 +11,13 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'pana-nonverbal-validation'
-set :domain, 'zhawpsychologie2.nine.ch'
-set :deploy_to, '/home/www-data/panava.persoenlichkeitsdiagnostik.ch'
-set :repository, 'git://github.com/gurix/pana-nonverbal-validation.git'
-set :branch, 'master'
+set :domain, ENV['APP_HOST']
+set :deploy_to, ENV['APP_DIRECTORY']
+set :repository, ENV['APP_REPOSITORY']
+set :branch, ENV['APP_BRANCH']
 
 # Optional settings:
-set :user, 'www-data'          # Username in the server to SSH to.
+set :user, ENV['APP_USER']       # Username in the server to SSH to.
 #   set :port, '30000'           # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
