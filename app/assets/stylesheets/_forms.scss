@@ -46,8 +46,15 @@ form {
     font-weight: bold;
   }
 
-  .radio input {
-    margin-right: 1rem;
+  .radio {
+    label {
+      padding-left: 20px;
+    }
+
+    input {
+      margin-left: -20px;
+      margin-right: 7px;
+    }
   }
 
   .radio {
