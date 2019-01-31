@@ -10,8 +10,8 @@ ruby:
       .col-lg-8.d-none.d-lg-block
         .row
           - t('.scale').each do |_value, text|
-            .col-lg.radio_button
-              strong = text
+            .col-lg.radio_button.scale
+              = text
   fieldset
     .row
       .col-lg-2
@@ -23,8 +23,9 @@ ruby:
         .row
           - t('.scale').each do |value, text|
             .radio_button.col-lg
-              .text = f.radio_button item.first, value
-              label for="pana_validation_questionary_#{item.first}_#{value}" = text
+              label
+                = f.radio_button item.first, value
+                span.text = text
       .col-lg-2
         .bipolar-right
           = item.last.split('|').last

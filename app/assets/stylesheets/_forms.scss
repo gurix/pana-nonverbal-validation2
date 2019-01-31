@@ -4,34 +4,43 @@
       text-align: right;
     }
 
+    fieldset {
+      .row {
+        height: 100%;
+      }
+    }
+
+    .scale {
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
     .radio_button {
-      display: block;
-      min-width: 108px;
-      text-align: center !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
       label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0,0,0,0);
-        border: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        .text {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0,0,0,0);
+          border: 0;
+        }
       }
     }
 
     .bipolar-left {
       text-align: right;
-    }
-  }
-}
-
-@media (max-width: 992px) {
-  form {
-    .radio_button {
-      * {
-       display: inline;
-      }
     }
   }
 }
@@ -48,18 +57,18 @@ form {
 
   .radio {
     label {
+      display: block;
+    }
+  }
+
+  .radio, .radio_button {
+    label {
       padding-left: 20px;
     }
 
     input {
       margin-left: -20px;
       margin-right: 7px;
-    }
-  }
-
-  .radio {
-    label {
-      display: block;
     }
   }
 
