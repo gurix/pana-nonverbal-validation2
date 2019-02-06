@@ -1,10 +1,10 @@
 class PanaValidationQuestionaryStructure
   VERTICAL_MAPING = [
-    %w[VA2_hi VA2_lo],
     %w[PA3_hi PA3_lo],
-    %w[NA3_hi NA3_lo],
     %w[PA2_hi1 PA2_lo],
-    %w[NA2_hi NA2_lo]
+    %w[NA3_hi NA3_lo],
+    %w[NA2_hi NA2_lo],
+    %w[VA2_hi VA2_lo]
   ].freeze
 
   MATRIX_MAPPING = [
