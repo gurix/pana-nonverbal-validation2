@@ -47,13 +47,23 @@ ruby:
   .without-success-flash = headline_with_flash
   p = t('.description')
 
-  .vertical-slider-container
-    .vertical-slider
-      .vertical-slider-top
-        = image_tag "panava_nonverbal/#{pair.first}.png"
-      .vertical-slider-middle
-        = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
+  - if (@pana_validation_questionary.page % 2).zero?
+    .vertical-slider-container
+      .vertical-slider
+        .vertical-slider-top
+          = image_tag "panava_nonverbal/#{pair.first}.png"
+        .vertical-slider-middle
+          = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
 
-      .vertical-slider-bottom
+        .vertical-slider-bottom
+          = image_tag "panava_nonverbal/#{pair.last}.png"
+  - else
+    .row
+      .col-4.col-md-2
+        = image_tag "panava_nonverbal/#{pair.first}.png"
+      .col-4.col-md-8
+          = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
+      .col-4.col-md-2
         = image_tag "panava_nonverbal/#{pair.last}.png"
-    = f.input column_name, as: :hidden
+
+  = f.input column_name, as: :hidden
