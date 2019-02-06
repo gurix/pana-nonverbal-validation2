@@ -14,7 +14,7 @@ coffee:
       console.log($(this).closest('.col'))
 
 ruby:
-  mapping_index = @pana_validation_questionary.page % 8
+  mapping_index = @pana_validation_questionary.page - 21
   attribute = "emoji_matrix_#{mapping_index + 1}"
   matrix = PanaValidationQuestionaryStructure::MATRIX_MAPPING[mapping_index]
 

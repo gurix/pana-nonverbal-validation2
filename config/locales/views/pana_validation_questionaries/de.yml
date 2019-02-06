@@ -9,9 +9,9 @@ de:
         title: Wie fühlten Sie sich in den letzten Tagen?
         description: Wählen Sie spontan eines der 4 Gesichter aus.
 
-      page6:
-        title: Die folgenden Aussagen betreffen Ihr Wohlbefinden in den letzten Tagen.
-        description: Markieren Sie bei jeder Aussage die Rubrik, die Ihrer Meinung nach am besten beschreibt, wie Sie sich in den letzten Tagen gefühlt haben.
+      who:
+        title: Die folgenden Aussage betrifft Ihr Wohlbefinden in den letzten Tagen.
+        description: Markieren Sie die Rubrik, die Ihrer Meinung nach am besten beschreibt, wie Sie sich in den letzten Tagen gefühlt haben.
         scale:
           5: Die ganze Zeit
           4: Meistens
@@ -20,9 +20,9 @@ de:
           1: Ab und zu
           0: Zu keinem Zeitpunkt
 
-      page7:
+      pnv:
         title: Wie fühlten Sie sich in den letzten Tagen?
-        description: Kreuzen Sie auf jeder Zeile an, was Ihren Gefühlen am ehesten entspricht.
+        description: Kreuzen Sie an, was Ihren Gefühlen am ehesten entspricht.
         scale:
           1: sehr
           2: ziemlich
@@ -32,9 +32,9 @@ de:
           6: ziemlich
           7: sehr
 
-      page10:
-        title: Es folgen fünf Aussagen, denen Sie zustimmen bzw. die Sie ablehnen können.
-        description: benutzen Sie die folgende Skala von «trifft überhaupt nicht zu» bis «trifft vollständig zu», um Ihre Zustimmung bzw. Ablehnung zu jeder Aussage zum Ausdruck zu bringen.
+      swl:
+        title: Folgende Aussage können Sie zustimmen bzw.  ablehnen.
+        description: Benutzen Sie die folgende Skala von «trifft überhaupt nicht zu» bis «trifft vollständig zu», um Ihre Zustimmung bzw. Ablehnung zu der Aussage zum Ausdruck zu bringen.
         scale:
           1: trifft überhaupt nicht zu
           2: trifft nicht zu
@@ -44,6 +44,6 @@ de:
           6: trifft zu
           7: trifft vollständig zu
 
-      page11:
+      end:
         title: Herzlichen Dank für Ihre Teilnahme!
         description: Sie haben die Umfrage abgeschlossen können Ihr Browserfenster nun schliessen.

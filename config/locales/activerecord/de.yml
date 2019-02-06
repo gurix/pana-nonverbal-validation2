@@ -10,11 +10,11 @@ de:
 
     attributes:
       pana_validation_questionary:
-        who1: In den letzten Tagen war ich froh und guter Laune
-        who2: In den letzten Tagen habe ich mich ruhig und entspannt gefühlt
-        who3: In den letzten Tagen habe ich mich energisch und aktiv gefühlt
-        who4: In den letzten Tagen habe ich mich beim Aufwachen frisch und ausgeruht gefühlt
-        who5: In den letzten Tagen war mein Alltag voller Dinge, die mich interessieren
+        who1: In den letzten Tagen war ich froh und guter Laune.
+        who2: In den letzten Tagen habe ich mich ruhig und entspannt gefühlt.
+        who3: In den letzten Tagen habe ich mich energisch und aktiv gefühlt.
+        who4: In den letzten Tagen habe ich mich beim Aufwachen frisch und ausgeruht gefühlt.
+        who5: In den letzten Tagen war mein Alltag voller Dinge, die mich interessieren.
         pnv1: zufrieden | unzufrieden
         pnv2: energiegeladen | energielos
         pnv3: gestresst | entspannt

@@ -6,18 +6,20 @@ class PanaValidationQuestionary < ApplicationRecord
     validates(column, presence: true, if: proc { |q| q.page == (column_index + 1) })
   end
 
-  # Validate presence for each item of the rest of the survey
-  PanaValidationQuestionaryStructure.structure[0..1].each_with_index do |page, page_index|
-    page.each do |item|
-      validates(item, presence: true, if: proc { |q| q.page == (page_index + 6) })
-    end
+  (6..10).each_with_index do |page, index|
+    validates("who#{index+1}", presence: true, if: proc { |q| q.page == page })
   end
 
-  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  8 }
-  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  9 }
-
-  PanaValidationQuestionaryStructure.structure[2].each do |item|
-    validates(item, presence: true, if: proc { |q| q.page == 10 })
+  (11..20).each_with_index do |page, index|
+    validates("pnv#{index+1}", presence: true, if: proc { |q| q.page == page })
   end
+
+  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  21 }
+  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  22 }
+
+  (23..27).each_with_index do |page, index|
+    validates("swls#{index+1}", presence: true, if: proc { |q| q.page == page })
+  end
+
   validates :page, presence: true
 end
