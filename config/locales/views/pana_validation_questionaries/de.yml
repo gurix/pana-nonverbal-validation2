@@ -33,7 +33,7 @@ de:
           7: sehr
 
       swl:
-        title: Folgende Aussage können Sie zustimmen bzw.  ablehnen.
+        title: Folgende Aussage können Sie zustimmen bzw. ablehnen.
         description: Benutzen Sie die folgende Skala von «trifft überhaupt nicht zu» bis «trifft vollständig zu», um Ihre Zustimmung bzw. Ablehnung zu der Aussage zum Ausdruck zu bringen.
         scale:
           1: trifft überhaupt nicht zu

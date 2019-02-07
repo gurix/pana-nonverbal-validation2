@@ -29,3 +29,6 @@ p = t('.description')
           = image_tag "panava_nonverbal/#{item}.png", alt: item
           br
           .sr-only = f.radio_button attribute, item
+
+- if f.object.errors[attribute].any?
+  .help-block= f.object.errors[attribute].first
