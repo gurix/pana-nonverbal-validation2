@@ -7,18 +7,18 @@ class PanaValidationQuestionary < ApplicationRecord
   end
 
   (6..10).each_with_index do |page, index|
-    validates("who#{index+1}", presence: true, if: proc { |q| q.page == page })
+    validates("who#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 
   (11..20).each_with_index do |page, index|
-    validates("pnv#{index+1}", presence: true, if: proc { |q| q.page == page })
+    validates("pnv#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 
   validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  21 }
   validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  22 }
 
   (23..27).each_with_index do |page, index|
-    validates("swls#{index+1}", presence: true, if: proc { |q| q.page == page })
+    validates("swls#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 
   validates :page, presence: true

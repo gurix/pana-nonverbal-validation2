@@ -70,7 +70,6 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
 
     expect(subject.reload.pana_validation_questionary["swls#{i + 1}"]).to eq 3
   end
-
 end
 
 feature 'PanaValidationQuestionary' do
