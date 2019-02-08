@@ -59,11 +59,12 @@ ruby:
           = image_tag "panava_nonverbal/#{pair.last}.png"
   - else
     .row
-      .col-4.col-md-2
+      .col-6
         = image_tag "panava_nonverbal/#{pair.first}.png"
-      .col-4.col-md-8
-          = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
-      .col-4.col-md-2
+      .col-6.text-right
         = image_tag "panava_nonverbal/#{pair.last}.png"
+    .row
+      .col-12.text-center.mt-4
+            = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
 
   = f.input column_name, as: :hidden
