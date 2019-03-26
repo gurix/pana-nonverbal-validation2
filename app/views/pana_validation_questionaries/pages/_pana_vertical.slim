@@ -1,70 +1,56 @@
-javascript:
-  $(document).ready(function() {
-    var slider = $('input[type="range"]');
-
-    slider.on('click touchend', function(event) {
-      $('#pana_validation_questionary_' + this.id).val(this.value);
-    });
-  });
-
-scss:
-  .vertical-slider-container {
-
-    .vertical-slider {
-      height: 50vh;
-      min-height: 370px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      img {
-        width: 100px;
-      }
-
-      .vertical-slider-middle {
-        display: flex;
-        align-items: center;
-        width: 20vh;
-        height: 20em;
-        min-width: 160px;
-        transform: rotate(-90deg);
-
-        [type='range'] {
-          position: relative;
-          top: 0%;
-          width: 100%;
-        }
-      }
-    }
-  }
-
 ruby:
   column_name = PanaValidationQuestionaryStructure.calculate_vertical_pana_columns[@pana_validation_questionary.page - 1]
   pair = PanaValidationQuestionaryStructure::VERTICAL_MAPING[@pana_validation_questionary.page - 1]
 
+javascript:
+  $(document).ready(function() {
+    window.slider = new Slider("##{column_name.to_s}");
+    window.slider.on("change", function(element) {
+      $("#pana_validation_questionary_#{column_name.to_s}").val(element.newValue);
+    });
+  });
+
 .pana_validation_questionary
   .without-success-flash = headline_with_flash
   p = t('.description')
+  .row
+    .col-6
+      = image_tag "panava_nonverbal/#{pair.first}.png"
+    .col-6.text-right
+      = image_tag "panava_nonverbal/#{pair.last}.png"
+  .row
+    .col-12.text-center.mt-4
+      = range_field_tag(column_name.to_s, f.object[column_name], style: 'width: 90%;', data: {'slider-ticks' => "[1, 2, 3, 4, 5, 6, 7]", 'slider-min' => 0,  'slider-max' => 7, 'slider-value' => f.object[column_name] || 4})
 
-  - if (@pana_validation_questionary.page % 2).zero?
-    .vertical-slider-container
-      .vertical-slider
-        .vertical-slider-top
-          = image_tag "panava_nonverbal/#{pair.first}.png"
-        .vertical-slider-middle
-          = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
+  p= f.input(column_name, as: :hidden)
 
-        .vertical-slider-bottom
-          = image_tag "panava_nonverbal/#{pair.last}.png"
-  - else
-    .row
-      .col-6
-        = image_tag "panava_nonverbal/#{pair.first}.png"
-      .col-6.text-right
-        = image_tag "panava_nonverbal/#{pair.last}.png"
-    .row
-      .col-12.text-center.mt-4
-            = range_field_tag(column_name.to_s, f.object[column_name], min: 0, max: 100, step: 1)
+scss:
+  .slider-selection.tick-slider-selection {
+  	background: transparent none;
+  }
 
-  = f.input column_name, as: :hidden
+  .slider-selection {
+    box-shadow:  none;
+  }
+
+  .slider-track {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    background: linear-gradient( to left, #CCC, white, #CCC);
+  }
+
+  .slider-tick.in-selection {
+    background: #CCC;
+    background-image: none;
+  }
+
+  .slider-tick {
+    background: #CCC;
+    background-image: none;
+    opacity: 1;
+  }
+
+  .slider-handle {
+    top: -5px;
+    width: 30px;
+    height: 30px;
+  }

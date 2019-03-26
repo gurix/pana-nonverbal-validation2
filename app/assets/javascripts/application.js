@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require ahoy
+//= require bootstrap-slider
 //= require_tree .
 
 ahoy.trackView();

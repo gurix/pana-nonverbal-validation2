@@ -1,6 +1,5 @@
-def range_select(name, value)
-  selector = %(input[type=range][name=\\"#{name}\\"])
-  script = %-$("#{selector}").val(#{value}).trigger('click')-
+def range_select(value)
+  script = 'window.slider.setValue(' + value.to_s + ', true, true)'
   page.execute_script(script)
 end
 
@@ -9,12 +8,11 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
 
   # Page 1 to 5
   PanaValidationQuestionaryStructure.calculate_vertical_pana_columns.each_with_index do |column, index|
-    new_value = (index + 1) * 10
+    new_value = (index + 1)
 
     expect(page).to have_selector 'h1', text: 'Wie fühlten Sie sich in den letzten Tagen?'
-
-    range_select(column, new_value)
-
+    range_select(1)
+    range_select(new_value)
     click_button 'Weiter'
 
     expect(subject.reload.pana_validation_questionary[column]).to eq new_value
