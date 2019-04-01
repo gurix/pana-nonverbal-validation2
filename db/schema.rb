@@ -59,11 +59,10 @@ ActiveRecord::Schema.define(version: 20180328122304) do
     t.integer "page", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "VA2_hi__VA2_lo"
-    t.integer "PA3_hi__PA3_lo"
-    t.integer "NA3_hi__NA3_lo"
-    t.integer "PA2_hi1__PA2_lo"
-    t.integer "NA2_hi__NA2_lo"
+    t.integer "NA1_lo__NA2_hi"
+    t.integer "NA3_lo__NA3_hi"
+    t.integer "PA3_lo__PA1_hi"
+    t.integer "PA4_lo3__PA4_hi"
     t.integer "who1"
     t.integer "who2"
     t.integer "who3"

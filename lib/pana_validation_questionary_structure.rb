@@ -1,15 +1,14 @@
 class PanaValidationQuestionaryStructure
   VERTICAL_MAPING = [
-    %w[PA3_hi PA3_lo],
-    %w[PA2_hi1 PA2_lo],
-    %w[NA3_hi NA3_lo],
-    %w[NA2_hi NA2_lo],
-    %w[VA2_hi VA2_lo]
+    %w[NA1_lo NA2_hi],
+    %w[NA3_lo NA3_hi],
+    %w[PA3_lo PA1_hi],
+    %w[PA4_lo3 PA4_hi],
   ].freeze
 
   MATRIX_MAPPING = [
     [%w[NA2_hi PA1_hi], %w[PA3_lo NA1_lo]],
-    [%w[NA3_hi PA4_hi], %w[PA4_lo NA3_lo]]
+    [%w[NA3_hi PA4_hi], %w[PA4_lo3 NA3_lo]]
   ].freeze
 
   # Define the structure of the questionary to handle validations and strong parameters automatically
