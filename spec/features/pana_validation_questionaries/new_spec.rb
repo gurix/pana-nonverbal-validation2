@@ -60,7 +60,7 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
     item = row.flatten.sample
 
     expect(page).to have_selector 'h1', text: 'Wie fühlen Sie sich gerade jetzt?'
-    expect(page).to have_content 'Wählen Sie spontan eines der 4 Gesichter aus.'
+    expect(page).to have_content 'Wählen Sie den Gesichtsausdruck, der Ihnen am besten entspricht.'
 
     find("img[alt='#{item}']").click
 

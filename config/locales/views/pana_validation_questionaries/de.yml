@@ -7,8 +7,7 @@ de:
 
       pana_matrix:
         title: Wie fühlen Sie sich gerade jetzt?
-        description: Wählen Sie spontan eines der 4 Gesichter aus.
-
+        description: Wählen Sie den Gesichtsausdruck, der Ihnen am besten entspricht.
       who:
         title: Die folgenden Aussage betrifft Ihr Wohlbefinden in den letzten Tagen.
         description: Markieren Sie die Rubrik, die Ihrer Meinung nach am besten beschreibt, wie Sie sich in den letzten Tagen gefühlt haben.

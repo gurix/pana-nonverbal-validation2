@@ -8,8 +8,8 @@ class PanaValidationQuestionaryStructure
   ].freeze
 
   MATRIX_MAPPING = [
-    [%w[NA2_hi PA2_hi1], %w[PA2_lo NA2_lo]],
-    [%w[NA3_hi PA3_hi], %w[PA3_lo NA3_lo]]
+    [%w[NA2_hi PA1_hi], %w[PA3_lo NA1_lo]],
+    [%w[NA3_hi PA4_hi], %w[PA4_lo NA3_lo]]
   ].freeze
 
   # Define the structure of the questionary to handle validations and strong parameters automatically
