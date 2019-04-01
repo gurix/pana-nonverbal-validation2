@@ -10,7 +10,7 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
   PanaValidationQuestionaryStructure.calculate_vertical_pana_columns.each_with_index do |column, index|
     new_value = (index + 1)
 
-    expect(page).to have_selector 'h1', text: 'Wie fühlten Sie sich in den letzten Tagen?'
+    expect(page).to have_selector 'h1', text: 'Wie fühlen Sie sich gerade jetzt?'
     range_select(1)
     range_select(new_value)
     click_button 'Weiter'
@@ -33,7 +33,7 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
 
   # Page 11 to 20
   10.times do |i|
-    expect(page).to have_selector 'h1', text: 'Wie fühlten Sie sich in den letzten Tagen?'
+    expect(page).to have_selector 'h1', text: 'Wie fühlen Sie sich gerade jetzt?'
 
     choose "pana_validation_questionary_pnv#{i + 1}_7"
 
@@ -48,7 +48,7 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
   PanaValidationQuestionaryStructure::MATRIX_MAPPING.each_with_index do |row, index|
     item = row.flatten.sample
 
-    expect(page).to have_selector 'h1', text: 'Wie fühlten Sie sich in den letzten Tagen?'
+    expect(page).to have_selector 'h1', text: 'Wie fühlen Sie sich gerade jetzt?'
     expect(page).to have_content 'Wählen Sie spontan eines der 4 Gesichter aus.'
 
     find("img[alt='#{item}']").click

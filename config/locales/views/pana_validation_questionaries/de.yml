@@ -2,11 +2,11 @@ de:
   pana_validation_questionaries:
     pages:
       pana_vertical:
-        title: Wie fühlten Sie sich in den letzten Tagen?
+        title: Wie fühlen Sie sich gerade jetzt?
         description: Bewegen Sie jeden Balken in Richtung des Gesichtsausdrucks, der auf Sie zutrifft.
 
       pana_matrix:
-        title: Wie fühlten Sie sich in den letzten Tagen?
+        title: Wie fühlen Sie sich gerade jetzt?
         description: Wählen Sie spontan eines der 4 Gesichter aus.
 
       who:
@@ -21,7 +21,7 @@ de:
           0: Zu keinem Zeitpunkt
 
       pnv:
-        title: Wie fühlten Sie sich in den letzten Tagen?
+        title: Wie fühlen Sie sich gerade jetzt?
         description: Kreuzen Sie an, was Ihren Gefühlen am ehesten entspricht.
         scale:
           1: sehr
