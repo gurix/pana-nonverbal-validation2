@@ -3,7 +3,7 @@ class PanaValidationQuestionaryStructure
     %w[NA1_lo NA2_hi],
     %w[NA3_lo NA3_hi],
     %w[PA3_lo PA1_hi],
-    %w[PA4_lo3 PA4_hi],
+    %w[PA4_lo3 PA4_hi]
   ].freeze
 
   MATRIX_MAPPING = [
