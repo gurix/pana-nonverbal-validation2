@@ -14,10 +14,10 @@ class PanaValidationQuestionary < ApplicationRecord
     validates("pnv#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 
-  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  21 }
-  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  22 }
+  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  26 }
+  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  27 }
 
-  (23..27).each_with_index do |page, index|
+  (21..25).each_with_index do |page, index|
     validates("swls#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 

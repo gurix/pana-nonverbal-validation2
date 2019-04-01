@@ -2,6 +2,6 @@
 p = t('.description')
 
 ruby:
-  question_code = "swls#{@pana_validation_questionary.page - 22}"
+  question_code = "swls#{@pana_validation_questionary.page - 20}"
   question = t('.questions')[question_code]
 = f.input question_code, as: :radio_buttons, collection: t('.scale'), label_method: :last, value_method: :first, wrapper: :simple_radio_buttons

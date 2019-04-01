@@ -44,7 +44,18 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
     expect(subject.reload.pana_validation_questionary["pnv#{i + 1}"]).to eq 7
   end
 
-  # Page 21 and 22
+  # Page 21 to 25
+  5.times do |i|
+    expect(page).to have_selector 'h1', text: 'Folgende Aussage können Sie zustimmen bzw. ablehnen.'
+
+    choose "pana_validation_questionary_swls#{i + 1}_3"
+
+    click_button 'Weiter'
+
+    expect(subject.reload.pana_validation_questionary["swls#{i + 1}"]).to eq 3
+  end
+
+  # Page 26 and 27
   PanaValidationQuestionaryStructure::MATRIX_MAPPING.each_with_index do |row, index|
     item = row.flatten.sample
 
@@ -56,17 +67,6 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
     click_button 'Weiter'
 
     expect(subject.reload.pana_validation_questionary["emoji_matrix_#{index + 1}"]).to eq item
-  end
-
-  # Page 23 to 27
-  5.times do |i|
-    expect(page).to have_selector 'h1', text: 'Folgende Aussage können Sie zustimmen bzw. ablehnen.'
-
-    choose "pana_validation_questionary_swls#{i + 1}_3"
-
-    click_button 'Weiter'
-
-    expect(subject.reload.pana_validation_questionary["swls#{i + 1}"]).to eq 3
   end
 end
 
