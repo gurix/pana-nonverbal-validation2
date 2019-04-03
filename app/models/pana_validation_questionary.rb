@@ -6,20 +6,20 @@ class PanaValidationQuestionary < ApplicationRecord
     validates(column, presence: true, if: proc { |q| q.page == (column_index + 1) })
   end
 
-  (5..9).each_with_index do |page, index|
+  (6..10).each_with_index do |page, index|
     validates("who#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 
-  (10..19).each_with_index do |page, index|
+  (11..20).each_with_index do |page, index|
     validates("pnv#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 
-  (20..24).each_with_index do |page, index|
+  (21..25).each_with_index do |page, index|
     validates("swls#{index + 1}", presence: true, if: proc { |q| q.page == page })
   end
 
-  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  25 }
-  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  26 }
+  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  26 }
+  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  27 }
 
   validates :page, presence: true
 end

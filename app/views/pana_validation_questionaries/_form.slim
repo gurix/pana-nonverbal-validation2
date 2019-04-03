@@ -1,15 +1,15 @@
 = simple_form_for [@subject, @pana_validation_questionary], url: subject_pana_validation_questionary_path(@subject) do |f|
-  - if @pana_validation_questionary.page < 5
+  - if @pana_validation_questionary.page < 6
     = render 'pana_validation_questionaries/pages/pana_vertical', f: f
-  - elsif (5 .. 9).include?(@pana_validation_questionary.page)
+  - elsif (6 .. 10).include?(@pana_validation_questionary.page)
     = render "pana_validation_questionaries/pages/who", f: f
-  - elsif (10 .. 19).include?(@pana_validation_questionary.page)
+  - elsif (11 .. 20).include?(@pana_validation_questionary.page)
     = render "pana_validation_questionaries/pages/pnv", f: f
-  - elsif (20 .. 24).include?(@pana_validation_questionary.page)
+  - elsif (21 .. 25).include?(@pana_validation_questionary.page)
     = render "pana_validation_questionaries/pages/swl", f: f
-  - elsif [25, 26].include?(@pana_validation_questionary.page)
+  - elsif [26, 27].include?(@pana_validation_questionary.page)
     = render 'pana_validation_questionaries/pages/pana_matrix', f: f
   - else
     = render "pana_validation_questionaries/pages/end", f: f
   = f.input :page, as: :hidden
-  = f.submit value: t('shared.next') if @pana_validation_questionary.page < 27
+  = f.submit value: t('shared.next') if @pana_validation_questionary.page < 28
