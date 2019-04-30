@@ -5,3 +5,4 @@ ruby:
   question_code = "who#{@pana_validation_questionary.page - 5}"
   question = t('.questions')[question_code]
 = f.input question_code, as: :radio_buttons, collection: t('.scale'), label_method: :last, value_method: :first, wrapper: :simple_radio_buttons
+= f.submit value: t('shared.next') if @pana_validation_questionary.page < 28

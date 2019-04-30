@@ -9,20 +9,23 @@ javascript:
       $("#pana_validation_questionary_#{column_name.to_s}").val(element.newValue);
     });
   });
-
 .pana_validation_questionary
-  .without-success-flash = headline_with_flash
-  p = t('.description')
   .row
-    .col-6
-      = image_tag "panava_nonverbal/#{pair.first}.png"
-    .col-6.text-right
-      = image_tag "panava_nonverbal/#{pair.last}.png"
-  .row
-    .col-12.text-center.mt-4
-      = range_field_tag(column_name.to_s, f.object[column_name], style: 'width: 90%;', data: {'slider-ticks' => "[1, 2, 3, 4, 5, 6, 7]", 'slider-min' => 0,  'slider-max' => 7, 'slider-value' => f.object[column_name] || 4})
-
-  p= f.input(column_name, as: :hidden)
+    .col-12.col-md-6.offset-md-3.col-lg-4.offset-lg-4
+      .without-success-flash = headline_with_flash
+      p = t('.description')
+      .row
+        .col-6
+          = image_tag "panava_nonverbal/#{pair.first}.png"
+        .col-6.text-right
+          = image_tag "panava_nonverbal/#{pair.last}.png"
+      .row
+        .col-12.text-center.mt-4
+          = range_field_tag(column_name.to_s, f.object[column_name], style: 'width: 90%;', data: {'slider-ticks' => "[1, 2, 3, 4, 5, 6, 7]", 'slider-min' => 0,  'slider-max' => 7, 'slider-value' => f.object[column_name] || 4})
+          = f.input(column_name, as: :hidden)
+      .row
+        .col-12.text-center.mt-4
+          = f.submit value: t('shared.next') if @pana_validation_questionary.page < 28
 
 scss:
   .slider-selection.tick-slider-selection {
