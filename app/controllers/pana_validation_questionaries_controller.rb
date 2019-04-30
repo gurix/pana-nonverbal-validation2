@@ -11,7 +11,7 @@ class PanaValidationQuestionariesController < ApplicationController
   end
 
   def create
-    @pana_validation_questionary = PanaValidationQuestionary.new(pana_validation_questionary_params)
+    @pana_validation_questionary = PanaValidationQuestionary.new(pana_validation_questionary_params.merge(version: 1))
     @pana_validation_questionary.subject = @subject
     @pana_validation_questionary.save
     respond_with(@pana_validation_questionary, location: edit_subject_pana_validation_questionary_path(@subject))

@@ -18,6 +18,8 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
     expect(subject.reload.pana_validation_questionary[column]).to eq new_value
   end
 
+  expect(subject.reload.pana_validation_questionary.version).to eq 1
+
   # Page 6 to 10
   5.times do |i|
     expect(page).to have_selector 'h1', text: 'Die folgenden Aussage betrifft Ihr Wohlbefinden in den letzten Tagen.'
