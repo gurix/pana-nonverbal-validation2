@@ -4,9 +4,15 @@ ruby:
 
 javascript:
   $(document).ready(function() {
+    function setValueFromSlider(value) {
+      $("#pana_validation_questionary_#{column_name.to_s}").val(value);
+    }
     window.slider = new Slider("##{column_name.to_s}");
     window.slider.on("slideStop", function(value) {
-      $("#pana_validation_questionary_#{column_name.to_s}").val(value);
+      setValueFromSlider(value)
+    });
+    window.slider.on("change", function(element) {
+      setValueFromSlider(element.newValue)
     });
   });
 .pana_validation_questionary
