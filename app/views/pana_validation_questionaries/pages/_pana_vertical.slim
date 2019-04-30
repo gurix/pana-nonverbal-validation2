@@ -5,8 +5,8 @@ ruby:
 javascript:
   $(document).ready(function() {
     window.slider = new Slider("##{column_name.to_s}");
-    window.slider.on("change", function(element) {
-      $("#pana_validation_questionary_#{column_name.to_s}").val(element.newValue);
+    window.slider.on("slideStop", function(value) {
+      $("#pana_validation_questionary_#{column_name.to_s}").val(value);
     });
   });
 .pana_validation_questionary
