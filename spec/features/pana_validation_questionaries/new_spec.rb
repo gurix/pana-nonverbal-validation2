@@ -20,44 +20,46 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
 
   expect(subject.reload.pana_validation_questionary.version).to eq 1
 
-  # Page 6 to 10
-  5.times do |i|
-    expect(page).to have_selector 'h1', text: 'Die folgenden Aussage betrifft Ihr Wohlbefinden in den letzten Tagen.'
+  # Page 6
+  expect(page).to have_selector 'h1', text: 'Die folgenden Aussage betrifft Ihr Wohlbefinden in den letzten Tagen.'
 
-    choose "pana_validation_questionary_who#{i + 1}_2"
-
-    click_button 'Weiter'
+  PanaValidationQuestionary.column_names.grep(/^who/).each do |code|
+    choose "pana_validation_questionary_#{code}_2"
   end
 
-  5.times do |i|
-    expect(subject.reload.pana_validation_questionary["who#{i + 1}"]).to eq 2
+  click_button 'Weiter'
+
+
+  PanaValidationQuestionary.column_names.grep(/^who/).each do |code|
+    expect(subject.reload.pana_validation_questionary[code]).to eq 2
   end
 
-  # Page 11 to 20
-  10.times do |i|
-    expect(page).to have_selector 'h1', text: 'Wie fühlen Sie sich gerade jetzt?'
+  # Page 7
+  expect(page).to have_selector 'h1', text: 'Wie fühlen Sie sich gerade jetzt?'
 
-    choose "pana_validation_questionary_pnv#{i + 1}_7"
-
-    click_button 'Weiter'
+  PanaValidationQuestionary.column_names.grep(/^pnv/).each do |code|
+    choose "pana_validation_questionary_#{code}_7"
   end
 
-  10.times do |i|
-    expect(subject.reload.pana_validation_questionary["pnv#{i + 1}"]).to eq 7
+  click_button 'Weiter'
+
+  PanaValidationQuestionary.column_names.grep(/^pnv/).each do |code|
+    expect(subject.reload.pana_validation_questionary[code]).to eq 7
   end
 
-  # Page 21 to 25
-  5.times do |i|
-    expect(page).to have_selector 'h1', text: 'Folgende Aussage können Sie zustimmen bzw. ablehnen.'
-
-    choose "pana_validation_questionary_swls#{i + 1}_3"
-
-    click_button 'Weiter'
-
-    expect(subject.reload.pana_validation_questionary["swls#{i + 1}"]).to eq 3
+  # Page 8
+  expect(page).to have_selector 'h1', text: 'Folgende Aussage können Sie zustimmen bzw. ablehnen.'
+  PanaValidationQuestionary.column_names.grep(/^swls/).each do |code|
+    choose "pana_validation_questionary_#{code}_3"
   end
 
-  # Page 26 and 27
+  click_button 'Weiter'
+
+  PanaValidationQuestionary.column_names.grep(/^swls/).each do |code|
+    expect(subject.reload.pana_validation_questionary[code]).to eq 3
+  end
+
+  # Page 9 and 10
   PanaValidationQuestionaryStructure::MATRIX_MAPPING.each_with_index do |row, index|
     item = row.flatten.sample
 

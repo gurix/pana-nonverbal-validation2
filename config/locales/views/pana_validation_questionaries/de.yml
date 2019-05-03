@@ -3,7 +3,7 @@ de:
     pages:
       pana_vertical:
         title: Wie fühlen Sie sich gerade jetzt?
-        description: Bewegen Sie jeden Balken in Richtung des Gesichtsausdrucks, der auf Sie zutrifft.
+        description: Bewegen Sie den Punkt in Richtung des Gesichtsausdrucks, der auf Sie zutrifft.
 
       pana_matrix:
         title: Wie fühlen Sie sich gerade jetzt?

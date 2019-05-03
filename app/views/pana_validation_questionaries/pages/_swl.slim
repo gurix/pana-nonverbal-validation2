@@ -1,8 +1,29 @@
 = headline_with_flash
 p = t('.description')
 
-ruby:
-  question_code = "swls#{@pana_validation_questionary.page - 20}"
-  question = t('.questions')[question_code]
-= f.input question_code, as: :radio_buttons, collection: t('.scale'), label_method: :last, value_method: :first, wrapper: :simple_radio_buttons
-= f.submit value: t('shared.next') if @pana_validation_questionary.page < 28
+- scale = t(".scale")
+.row aria-hidden="true"
+  .col-lg-3.d-none.d-lg-block
+  .col-lg-9.d-none.d-lg-block
+    .row
+      - scale.each do |value ,text|
+        .col-lg.radio_button.vcenter
+          strong = text
+- PanaValidationQuestionary.column_names.grep(/^swls/).each do |code|
+    fieldset
+      .row
+        .col-lg-3
+          legend
+            = t("activerecord.attributes.pana_validation_questionary.#{code}")
+          - f.object.errors[code].each do |error|
+            .help-block = error
+        .col-lg-9
+          .row
+            - scale.each do |value ,text|
+              .col-lg.radio_button
+                = f.radio_button code, value
+
+                label for="pana_validation_questionary_#{code}_#{value}"
+                  = text
+      hr
+= f.submit t('shared.next')

@@ -1,6 +1,6 @@
 @media (min-width: 992px) {
   form {
-      .col-sm-3.control-label {
+    .col-sm-3.control-label {
       text-align: right;
     }
 
@@ -20,22 +20,15 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      hyphens: auto;
 
       label {
-        display: block;
-        width: 100%;
-        text-align: center;
-
-        .text {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0,0,0,0);
-          border: 0;
-        }
+        position: absolute;
+        left:     -10000px;
+        top:      auto;
+        width:    1px;
+        height:   1px;
+        overflow: hidden;
       }
     }
 
@@ -46,6 +39,22 @@
 }
 
 form {
+  label.control-label {
+    font-weight: bold;
+  }
+
+  input.boolean {
+    margin: 5px;
+  }
+
+  .radio_buttons {
+    margin-left: 0px;
+
+    .form-control {
+      border: none;
+    }
+  }
+
   .fa.fa-asterisk {
     font-size: 0.5rem;
     vertical-align: super;
@@ -67,7 +76,6 @@ form {
     }
 
     input {
-      margin-left: -20px;
       margin-right: 7px;
     }
   }
@@ -78,8 +86,8 @@ form {
 
   fieldset {
     legend {
-      font-size: 1rem;
       font-weight: bold;
+      font-size: 1rem;
     }
     .bipolar-left, .bipolar-right  {
       font-weight: bold;

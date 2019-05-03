@@ -6,20 +6,20 @@ class PanaValidationQuestionary < ApplicationRecord
     validates(column, presence: true, if: proc { |q| q.page == (column_index + 1) })
   end
 
-  (6..10).each_with_index do |page, index|
-    validates("who#{index + 1}", presence: true, if: proc { |q| q.page == page })
+  PanaValidationQuestionary.column_names.grep(/^who/).each do |column|
+    validates(column, presence: true, if: proc { |q| q.page == 6 })
   end
 
-  (11..20).each_with_index do |page, index|
-    validates("pnv#{index + 1}", presence: true, if: proc { |q| q.page == page })
+  PanaValidationQuestionary.column_names.grep(/^pnv/).each do |column|
+    validates(column, presence: true, if: proc { |q| q.page == 7 })
   end
 
-  (21..25).each_with_index do |page, index|
-    validates("swls#{index + 1}", presence: true, if: proc { |q| q.page == page })
+  PanaValidationQuestionary.column_names.grep(/^swls/).each do |column|
+    validates(column, presence: true, if: proc { |q| q.page == 8 })
   end
 
-  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  26 }
-  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  27 }
+  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  9 }
+  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  10 }
 
   validates :page, presence: true
 end

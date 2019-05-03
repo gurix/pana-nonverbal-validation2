@@ -19,7 +19,8 @@ class PanaValidationQuestionariesController < ApplicationController
 
   def edit
     @pana_validation_questionary.page += 1
-    return observable_redirect_to(respondi_complete_url) if @pana_validation_questionary.page == 8 && @subject.tic.present?
+    # FIXME: redirect to respondi not in use at the moment
+    return observable_redirect_to(respondi_complete_url) if @pana_validation_questionary.page == 666 && @subject.tic.present?
   end
 
   def update

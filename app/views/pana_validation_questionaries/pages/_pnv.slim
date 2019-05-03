@@ -1,15 +1,32 @@
 = headline_with_flash
 p = t('.description')
+- scale = t(".scale")
+.row aria-hidden="true"
+  .col-lg-2.d-none.d-lg-block
+  .col-lg-8.d-none.d-lg-block
+    .row
+      - scale.each do |value ,text|
+        .col-lg.radio_button.vcenter
+          strong = text
+- PanaValidationQuestionary.column_names.grep(/^pnv/).each do |code|
+  - item_text = t("activerecord.attributes.pana_validation_questionary.#{code}").split('|')
+  fieldset
+    .row
+      .col-lg-2.bipolar-left
+        = item_text.first
+        - f.object.errors[code].each do |error|
+          .help-block = error
+      .col-lg-8
+        .row
+          - scale.each do |value ,text|
+            .col-lg.radio_button
+              = f.radio_button code, value
 
-ruby:
-  question_code = "pnv#{@pana_validation_questionary.page - 10}"
-  question = PanaValidationQuestionary.human_attribute_name(question_code)
-  scale = t('.scale').map do |key, value|
-    question_texts = question.split('|')
-    text = question_texts.first if key < 4
-    text = question_texts.last if key > 4
-    [key, " #{value} #{text}"]
-  end
-
-= f.input question_code, as: :radio_buttons, collection: scale, label_method: :last, value_method: :first, wrapper: :simple_radio_buttons, label_html: { class: 'sr-only' }
-= f.submit value: t('shared.next') if @pana_validation_questionary.page < 28
+              label for="pana_validation_questionary_#{code}_#{value}"
+                = text + " "
+                = item_text.first if value < 4
+                = item_text.last if value > 4
+      .col-lg-2.bipolar-right
+        = item_text.last
+    hr
+= f.submit t('shared.next')
