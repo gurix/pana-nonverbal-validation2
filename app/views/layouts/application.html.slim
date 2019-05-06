@@ -9,4 +9,6 @@ html lang="#{I18n.locale}"
     == csrf_meta_tags
   body class="#{controller_name}"
     main[role="main"]
-      == yield
+      .d-none.d-lg-block == yield
+      .d-lg-none
+        p.alert.alert-danger Für diese Befragung ist Ihre Bildschirmauflösung zu gering. Bitte verwenden sie ein Gerät, dass eine Fenstergrösse von mindestens 1000 Pixel ermöglicht. Besten Dank
