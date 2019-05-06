@@ -21,14 +21,13 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
   expect(subject.reload.pana_validation_questionary.version).to eq 1
 
   # Page 6
-  expect(page).to have_selector 'h1', text: 'Die folgenden Aussage betrifft Ihr Wohlbefinden in den letzten Tagen.'
+  expect(page).to have_selector 'h1', text: 'Die folgenden Aussagen betreffen Ihr Wohlbefinden in den letzten Tagen.'
 
   PanaValidationQuestionary.column_names.grep(/^who/).each do |code|
     choose "pana_validation_questionary_#{code}_2"
   end
 
   click_button 'Weiter'
-
 
   PanaValidationQuestionary.column_names.grep(/^who/).each do |code|
     expect(subject.reload.pana_validation_questionary[code]).to eq 2
@@ -48,7 +47,7 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
   end
 
   # Page 8
-  expect(page).to have_selector 'h1', text: 'Folgende Aussage können Sie zustimmen bzw. ablehnen.'
+  expect(page).to have_selector 'h1', text: 'Folgende Aussagen können Sie zustimmen bzw. ablehnen.'
   PanaValidationQuestionary.column_names.grep(/^swls/).each do |code|
     choose "pana_validation_questionary_#{code}_3"
   end

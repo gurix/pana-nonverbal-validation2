@@ -9,7 +9,7 @@ de:
         title: Wie fühlen Sie sich gerade jetzt?
         description: Wählen Sie den Gesichtsausdruck, der Ihnen am besten entspricht.
       who:
-        title: Die folgenden Aussage betrifft Ihr Wohlbefinden in den letzten Tagen.
+        title: Die folgenden Aussagen betreffen Ihr Wohlbefinden in den letzten Tagen.
         description: Markieren Sie die Rubrik, die Ihrer Meinung nach am besten beschreibt, wie Sie sich in den letzten Tagen gefühlt haben.
         scale:
           5: Die ganze Zeit
@@ -32,8 +32,8 @@ de:
           7: sehr
 
       swl:
-        title: Folgende Aussage können Sie zustimmen bzw. ablehnen.
-        description: Benutzen Sie die folgende Skala von «trifft überhaupt nicht zu» bis «trifft vollständig zu», um Ihre Zustimmung bzw. Ablehnung zu der Aussage zum Ausdruck zu bringen.
+        title: Folgende Aussagen können Sie zustimmen bzw. ablehnen.
+        description: Benutzen Sie die folgende Skala von «trifft überhaupt nicht zu» bis «trifft vollständig zu», um Ihre Zustimmung bzw. Ablehnung zu der Aussagen zum Ausdruck zu bringen.
         scale:
           1: trifft überhaupt nicht zu
           2: trifft nicht zu
