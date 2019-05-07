@@ -6,6 +6,7 @@ javascript:
   $(document).ready(function() {
     function setValueFromSlider(value) {
       $("#pana_validation_questionary_#{column_name.to_s}").val(value);
+      $('.slider-handle').addClass('touched')
     }
     window.slider = new Slider("##{column_name.to_s}");
     window.slider.on("slideStop", function(value) {
@@ -60,6 +61,16 @@ scss:
 
   .slider-handle {
     top: -5px;
+    lelft: -12px;
     width: 30px;
     height: 30px;
+    background: rgba(51,122,183,0);
+  }
+
+  .slider-handle.touched {
+    top: -5px;
+    lelft: -12px;
+    width: 30px;
+    height: 30px;
+    background: rgba(51,122,183,1);
   }
