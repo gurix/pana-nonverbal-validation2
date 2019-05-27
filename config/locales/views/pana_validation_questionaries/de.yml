@@ -31,6 +31,10 @@ de:
           6: ziemlich
           7: sehr
 
+      sam:
+        title: Wie fühlten Sie sich in den letzten Tagen?
+        description: Klicken Sie das Bild an, was Ihren Gefühlen am ehesten entspricht.
+
       swl:
         title: Folgende Aussagen können Sie zustimmen bzw. ablehnen.
         description: Benutzen Sie die folgende Skala von «trifft überhaupt nicht zu» bis «trifft vollständig zu», um Ihre Zustimmung bzw. Ablehnung zu der Aussagen zum Ausdruck zu bringen.

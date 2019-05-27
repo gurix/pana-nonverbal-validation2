@@ -47,6 +47,43 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
   end
 
   # Page 8
+  expect(page).to have_selector 'h1', text: 'Wie fühlten Sie sich in den letzten Tagen?'
+
+  find('label[for="pana_validation_questionary_sam1_1"]').click
+
+  click_button 'Weiter'
+
+  expect(subject.reload.pana_validation_questionary['sam1']).to eq 1
+
+  click_button 'Weiter'
+
+  # Page 9
+  expect(page).to have_selector 'h1', text: 'Wie fühlten Sie sich in den letzten Tagen?'
+
+  find('label[for="pana_validation_questionary_sam2_2"]').click
+
+  click_button 'Weiter'
+
+  expect(subject.reload.pana_validation_questionary['sam2']).to eq 2
+
+  click_button 'Weiter'
+
+  # Page 10
+  expect(page).to have_selector 'h1', text: 'Wie fühlten Sie sich in den letzten Tagen?'
+
+  find('label[for="pana_validation_questionary_sam3_3"]').click
+
+  click_button 'Weiter'
+
+  expect(subject.reload.pana_validation_questionary['sam3']).to eq 3
+
+  click_button 'Weiter'
+
+  PanaValidationQuestionary.column_names.grep(/^pnv/).each do |code|
+    expect(subject.reload.pana_validation_questionary[code]).to eq 7
+  end
+
+  # Page 11
   expect(page).to have_selector 'h1', text: 'Folgende Aussagen können Sie zustimmen bzw. ablehnen.'
   PanaValidationQuestionary.column_names.grep(/^swls/).each do |code|
     choose "pana_validation_questionary_#{code}_3"
@@ -58,7 +95,7 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
     expect(subject.reload.pana_validation_questionary[code]).to eq 3
   end
 
-  # Page 9 and 10
+  # Page 12 and 13
   PanaValidationQuestionaryStructure::MATRIX_MAPPING.each_with_index do |row, index|
     item = row.flatten.sample
 

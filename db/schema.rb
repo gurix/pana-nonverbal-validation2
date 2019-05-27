@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190430062840) do
+ActiveRecord::Schema.define(version: 20190527133509) do
 
   create_table "ahoy_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "visit_id"
@@ -87,6 +87,9 @@ ActiveRecord::Schema.define(version: 20190430062840) do
     t.integer "swls5"
     t.integer "VA2_hi__VA2_lo"
     t.integer "version", default: 0
+    t.integer "sam1"
+    t.integer "sam2"
+    t.integer "sam3"
     t.index ["subject_id"], name: "index_pana_validation_questionaries_on_subject_id"
   end
 

@@ -14,12 +14,24 @@ class PanaValidationQuestionary < ApplicationRecord
     validates(column, presence: true, if: proc { |q| q.page == 7 })
   end
 
-  PanaValidationQuestionary.column_names.grep(/^swls/).each do |column|
+  PanaValidationQuestionary.column_names.grep(/^sam1/).each do |column|
     validates(column, presence: true, if: proc { |q| q.page == 8 })
   end
 
-  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  9 }
-  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  10 }
+  PanaValidationQuestionary.column_names.grep(/^sam2/).each do |column|
+    validates(column, presence: true, if: proc { |q| q.page == 9 })
+  end
+
+  PanaValidationQuestionary.column_names.grep(/^sam3/).each do |column|
+    validates(column, presence: true, if: proc { |q| q.page == 10 })
+  end
+
+  PanaValidationQuestionary.column_names.grep(/^swls/).each do |column|
+    validates(column, presence: true, if: proc { |q| q.page == 11 })
+  end
+
+  validates :emoji_matrix_1, presence: true, if: proc { |q| q.page ==  12 }
+  validates :emoji_matrix_2, presence: true, if: proc { |q| q.page ==  13 }
 
   validates :page, presence: true
 end

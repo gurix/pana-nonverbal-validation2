@@ -5,9 +5,11 @@
     = render "pana_validation_questionaries/pages/who", f: f
   - elsif @pana_validation_questionary.page == 7
     = render "pana_validation_questionaries/pages/pnv", f: f
-  - elsif @pana_validation_questionary.page == 8
+  - elsif [8, 9, 10].include?(@pana_validation_questionary.page)
+    = render "pana_validation_questionaries/pages/sam", f: f
+  - elsif @pana_validation_questionary.page == 11
     = render "pana_validation_questionaries/pages/swl", f: f
-  - elsif [9, 10].include?(@pana_validation_questionary.page)
+  - elsif [12, 13].include?(@pana_validation_questionary.page)
     = render 'pana_validation_questionaries/pages/pana_matrix', f: f
   - else
     = render "pana_validation_questionaries/pages/end", f: f
