@@ -1,5 +1,5 @@
 class PanaValidationQuestionariesController < ApplicationController
-  RESPONDI_RETURN_CODE = 111_111
+  RESPONDI_RETURN_CODE = 1_125_231
 
   respond_to :html
 
@@ -11,7 +11,7 @@ class PanaValidationQuestionariesController < ApplicationController
   end
 
   def create
-    @pana_validation_questionary = PanaValidationQuestionary.new(pana_validation_questionary_params.merge(version: 1))
+    @pana_validation_questionary = PanaValidationQuestionary.new(pana_validation_questionary_params.merge(version: 2))
     @pana_validation_questionary.subject = @subject
     @pana_validation_questionary.save
     respond_with(@pana_validation_questionary, location: edit_subject_pana_validation_questionary_path(@subject))
@@ -20,7 +20,7 @@ class PanaValidationQuestionariesController < ApplicationController
   def edit
     @pana_validation_questionary.page += 1
     # FIXME: redirect to respondi not in use at the moment
-    return observable_redirect_to(respondi_complete_url) if @pana_validation_questionary.page == 666 && @subject.tic.present?
+    return observable_redirect_to(respondi_complete_url) if @pana_validation_questionary.page == 14 && @subject.tic.present?
   end
 
   def update

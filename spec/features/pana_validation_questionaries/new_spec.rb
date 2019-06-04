@@ -18,7 +18,7 @@ def standard_questionary(subject) # rubocop:disable Metrics/MethodLength
     expect(subject.reload.pana_validation_questionary[column]).to eq new_value
   end
 
-  expect(subject.reload.pana_validation_questionary.version).to eq 1
+  expect(subject.reload.pana_validation_questionary.version).to eq 2
 
   # Page 6
   expect(page).to have_selector 'h1', text: 'Die folgenden Aussagen betreffen Ihr Wohlbefinden in den letzten Tagen.'
@@ -117,5 +117,17 @@ feature 'PanaValidationQuestionary' do
     standard_questionary(subject)
 
     expect(page).to have_content 'Herzlichen Dank für Ihre Teilnahme!'
+  end
+
+  scenario 'Create a new questionary for respondi', js: true do
+    subject = create :subject, tic: 'Salem Aleikum'
+
+    standard_questionary(subject)
+
+    url = "https://mingle.respondi.com/s/#{PanaValidationQuestionariesController::RESPONDI_RETURN_CODE}/ospe.php3?c_0002=1&return_tic=#{subject.tic}" # rubocop:disable Metrics/LineLength
+
+    expect(page).to have_content "If this wasn't a test, you'd be redirected to: #{url}"
+
+    expect(page).not_to have_content 'Herzlichen Dank für Ihre Teilnahme!'
   end
 end
