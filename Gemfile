@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'mina' # Really fast deployer and server automation tool.
 gem 'mini_racer'
 gem 'mysql2', '~> 0.3.18'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3'
 gem 'rails', '~> 5.1.5'
 gem 'rails-i18n'
 gem 'responders' # A set of Rails responders
